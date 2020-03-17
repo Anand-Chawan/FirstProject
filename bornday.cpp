@@ -65,7 +65,10 @@ int main()
 	cin>>d>>m>>y;
 	int s=0;
 	s=ycode(y%100)+ccode(y/100)+mcode(m)+d%7;
-	display((s-lyear(y))%7);
+	if(m==1||m==2)
+		display((s+7-lyear(y))%7);
+	else
+		display(s%7);
 	
 	return 0;
 }
